@@ -9,8 +9,7 @@ export const App = () => {
   useEffect(() => {
     getData();
   }, []);
-  return (
-    <main>
+  return <main>
       <h1>Covid Tracker Live</h1>
       <div className="boxdiv-boxes">
         <div className="boxdiv-boxes-box">
@@ -51,5 +50,4 @@ export const App = () => {
         </div>
       </div>
     </main>
-  );
 };
