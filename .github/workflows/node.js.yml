@@ -16,7 +16,7 @@ jobs:
     - name: Installing Dependencies 🧾
       run : yarn install
     - name: Buillding my App 🏗️
-      run: yarn run build
+      run: yarn run gitBuild
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@4.1.1
       with:

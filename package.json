@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "gitBuild": "tsc && vite build --base=/covid-tracker/",
     "serve": "vite preview"
   },
   "dependencies": {
