@@ -1,0 +1,24 @@
+name: Node.js CI
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14.x
+    - name: Installing Dependencies 🧾
+      run : yarn install
+    - name: Buillding my App 🏗️
+      run: yarn run build
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@4.1.1
+      with:
+          branch: gh-pages
+          folder: dist
