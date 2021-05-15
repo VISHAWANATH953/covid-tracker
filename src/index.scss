@@ -60,7 +60,7 @@ main {
     overflow-y: auto;
   }
   main {
-    height: 150vh;
+    height: 100vh;
     justify-content: flex-start;
     h1 {
       margin: 1.5rem 0;
@@ -70,8 +70,8 @@ main {
       height: 80vh;
       justify-content: center;
       &-box {
-        width: 25rem;
-        height: 15rem;
+        width: 20rem;
+        height: 14rem;
         margin: 2rem auto;
         h2 {
           font-size: 1.5rem;
@@ -82,6 +82,17 @@ main {
         p {
           font-size: 2rem;
         }
+      }
+    }
+  }
+}
+@media screen and(max-width: 320px){
+  main{
+    height:170vh;
+    .boxdiv-boxes {
+      &-box {
+        width: 25rem;
+        height: 15rem;
       }
     }
   }
