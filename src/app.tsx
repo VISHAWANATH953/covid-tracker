@@ -2,9 +2,9 @@ import { useEffect, useState } from "preact/hooks";
 export const App = () => {
   const [data, setData] = useState<any>([]);
   const getData = async () => {
-    const res = await fetch("https://api.covid19india.org/data.json");
-    const dat = await res.json();
-    setData(dat.statewise[0]);
+    const r = await fetch("https://api.covid19india.org/data.json");
+    const d = await r.json();
+    setData(d.statewise[0]);
   };
   useEffect(() => {
     getData();
