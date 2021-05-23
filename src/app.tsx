@@ -1,53 +1,43 @@
 import { useEffect, useState } from "preact/hooks";
 export const App = () => {
   const [data, setData] = useState<any>([]);
-  const getData = async () => {
+  const getindia = async () => {
     const r = await fetch("https://api.covid19india.org/data.json");
     const d = await r.json();
-    setData(d.statewise[0]);
+    setData(d.statewise);
   };
   useEffect(() => {
-    getData();
+    getindia();
   }, []);
-  return <main>
+  return (
+    <main>
       <h1>Covid Tracker Live</h1>
-      <div className="boxdiv-boxes">
-        <div className="boxdiv-boxes-box">
-          <h2>
-            OUR<span>COUNTRY</span>
-          </h2>
-          <p>INDIA</p>
-        </div>
-        <div className="boxdiv-boxes-box">
-          <h2>
-            TOTAL<span>RECOVERED</span>
-          </h2>
-          <p>{data.recovered}</p>
-        </div>
-        <div className="boxdiv-boxes-box">
-          <h2>
-            TOTAL<span>CONFIRMED</span>
-          </h2>
-          <p>{data.confirmed}</p>
-        </div>
-        <div className="boxdiv-boxes-box">
-          <h2>
-            TOTAL<span>DEATH</span>
-          </h2>
-          <p>{data.deaths}</p>
-        </div>
-        <div className="boxdiv-boxes-box">
-          <h2>
-            TOTAL<span>ACTIVE</span>
-          </h2>
-          <p>{data.active}</p>
-        </div>
-        <div className="boxdiv-boxes-box">
-          <h2>
-            LAST<span>UPDATED</span>
-          </h2>
-          <p>{data.lastupdatedtime}</p>
-        </div>
-      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Sr</th>
+            <th>State</th>
+            <th>Active</th>
+            <th>Confrom</th>
+            <th>Deaths</th>
+            <th>Recovered</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((d: any, i: number) => {
+            return (
+              <tr key={i}>
+                <td>{i++}</td>
+                <td>{d.state}</td>
+                <td>{d.active}</td>
+                <td>{d.confirmed}</td>
+                <td>{d.deaths}</td>
+                <td>{d.recovered}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
     </main>
+  );
 };
