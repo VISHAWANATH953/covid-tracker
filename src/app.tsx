@@ -17,7 +17,7 @@ export const App = () => {
             <th>Sr</th>
             <th>State</th>
             <th>Active</th>
-            <th>Confrom</th>
+            <th>Confirm</th>
             <th>Deaths</th>
             <th>Recovered</th>
           </tr>
