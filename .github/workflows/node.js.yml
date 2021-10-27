@@ -13,8 +13,9 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: 14.x
-    - name: Installing Dependencies 🧾
+    - name: Installing Dependencies And Upgrading 🧾
       run : yarn install
+      run : yarn upgrade
     - name: Buillding my App 🏗️
       run: yarn run gitBuild
     - name: Deploy 🚀
