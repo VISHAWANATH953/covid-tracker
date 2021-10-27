@@ -9,7 +9,7 @@ export const App = () => {
     const fillterd = d.statewise.filter((d: any) => 0 != d.active)
     setData(fillterd)
   }
-  useEffect(() => { getindia() }, [data, setData]);
+  useEffect(() => { getindia() }, []);
   return (
     <main>
       <h1>Covid Tracker Live</h1>
