@@ -2,7 +2,7 @@ import { useEffect, useState } from "preact/hooks"
 export const App = () => {
   const [data, setData] = useState<any>([]);
   const getindia = async () => {
-    const r = await fetch("https://api.covid19india.org/data.json",
+    const r = await fetch("http://api.covid19india.org/data.json",
       { mode: 'no-cors' }
     )
     const d = await r.json();
