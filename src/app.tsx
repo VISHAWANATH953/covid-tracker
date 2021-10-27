@@ -2,14 +2,14 @@ import { useEffect, useState } from "preact/hooks"
 export const App = () => {
   const [data, setData] = useState<any>([]);
   const getindia = async () => {
-    const r = await fetch("https://api.covid19india.org/data.json", {
-      "Access-Control-Allow-Origin": "no-cors"
-    })
+    const r = await fetch("https://api.covid19india.org/data.json",
+      { mode: 'no-cors' }
+    )
     const d = await r.json();
     const fillterd = d.statewise.filter((d: any) => 0 != d.active)
     setData(fillterd)
   }
-  useEffect(() => { getindia() }, [data,setData]);
+  useEffect(() => { getindia() }, [data, setData]);
   return (
     <main>
       <h1>Covid Tracker Live</h1>
